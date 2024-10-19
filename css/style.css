@@ -1823,7 +1823,7 @@ figure.dotted-bg:before {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки по умолчанию */
   gap: 16px; /* Расстояние между элементами */
   margin-top: 20px; /* Отступ сверху */
 }
@@ -1843,6 +1843,19 @@ figure.dotted-bg:before {
 
 .gallery-item:hover {
   transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Медиазапросы для изменения количества колонок */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на средних экранах */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* 1 колонка на маленьких экранах */
+  }
 }
 
 @media (max-width: 991.98px) {
